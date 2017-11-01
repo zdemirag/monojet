@@ -1,0 +1,8 @@
+CombinedLimit
+CombineHarvester
+*pyc
+*root
+*.d
+*.pcm
+*.so
+*~
