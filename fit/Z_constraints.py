@@ -17,7 +17,7 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   # example below for creating shape systematic for photon which is just every bin up/down 30% 
 
   metname    = "met"          # Observable variable name 
-  gvptname   = "genBos_pt"    # Weights are in generator pT
+  gvptname   = "genBosonPt"   # Weights are in generator pT
 
   target             = _fin.Get("signal_zjets")      # define monimal (MC) of which process this config will model
   controlmc          = _fin.Get("Zmm_zll")           # defines Zmm MC of which process will be controlled by
@@ -88,9 +88,7 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
     CRs[0].add_nuisance_shape("%s_stat_error_%s_bin%d"%(cid,"photonCR",b),_fOut)
 
   ## Here now adding the trigger uncertainty
-  #fztoz_trig = r.TFile.Open("misc/othersys/all_trig2.root") # 250 binning 
   fztoz_trig = r.TFile.Open("misc/othersys/all_trig3.root") # 250 - 1400 binning 
-  #fztoz_trig = r.TFile.Open("misc/othersys/all_trig_230bin.root") # 230 binning 
 
   gztoz_trig_down = fztoz_trig.Get("trig_sys_down"+tag)
   gratio_ztoztrig_down = PhotonScales.Clone(); gratio_ztoztrig_down.SetName("photon_weights_%s_mettrig_Down"%cid);
@@ -223,7 +221,7 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
     tag = ""
 
   metname    = "met"          # Observable variable name 
-  gvptname   = "genBos_pt"    # Weights are in generator pT
+  gvptname   = "genBosonPt"   # Weights are in generator pT
 
   target             = _fin.Get("signal_zjets")      # define monimal (MC) of which process this config will model
   controlmc          = _fin.Get("Zmm_zll")           # defines Zmm MC of which process will be controlled by
@@ -394,7 +392,6 @@ def my_function(_wspace,_fin,_fOut,nam,diag):
 
 
   #################################################################################################################                                                                   
-
   #################################################################################################################
   ### Now lets do the same thing for W
 

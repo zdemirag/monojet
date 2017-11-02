@@ -7,7 +7,8 @@ lumi = 1.0
 
 ######################################################
 
-dataDir = "/afs/cern.ch/work/z/zdemirag/public/moriond17/setup80x/vbf_panda/vbf_004_7/"
+#dataDir = "/afs/cern.ch/work/z/zdemirag/public/moriond17/setup80x/vbf_panda/vbf_004_7/"
+dataDir = "/eos/cms/store/group/phys_exotica/monojet/zdemirag/panda/monojet/v1/"
 
 physics_processes = {
         
@@ -72,8 +73,7 @@ physics_processes = {
                                 'color'   : "#B0C4DE",
                                 'ordering': 7,
                                 'xsec'    : 1.0,
-                                #'files'   : [dataDir+"ZtoNuNu.root"],
-                                'files'   : [dataDir+"ZtoNuNu_test.root"],
+                                'files'   : [dataDir+"ZtoNuNu.root"],
                                 },
 
        #'EWKZ2Jets_ZToNuNu' : { 'label'    : 'EWK Z(#nu#nu) + 2jets',
@@ -92,13 +92,13 @@ physics_processes = {
                                 'files':[dataDir+'MET.root',],                  
                                 },
         
-        'signal_vbf'        : {'label':'qqH 125',
-                               'datacard':'signal',
-                               'color':1,
-                               'ordering': 9,
-                               'xsec' : 1.0,
-                               'files':[dataDir+'vbfHinv_m125.root',],
-                               },
+        #'signal_vbf'        : {'label':'qqH 125',
+        #                       'datacard':'signal',
+        #                       'color':1,
+        #                       'ordering': 9,
+        #                       'xsec' : 1.0,
+        #                       'files':[dataDir+'vbfHinv_m125.root',],
+        #                       },
         
         'signal_ggf'        : {'label':'ggH 125',
                                'datacard':'signal',

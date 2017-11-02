@@ -7,10 +7,8 @@ def build_weights(channel, Type):
         if Type is 'data':
             common_weight = "*(1.0)"
         else:
-            #common_weight = "*sf_pu*sf_tt*normalizedWeight*sf_lepID*sf_lepIso*sf_lepTrack*sf_ewkV*sf_qcdV*sf_metTrig"
-            common_weight = "*sf_pu*sf_tt*normalizedWeight*sf_lepID*sf_lepIso*sf_lepTrack*sf_ewkV*sf_metTrig"
-            #common_weight = "*sf_npv*sf_tt*normalizedWeight*sf_lepID*sf_lepIso*sf_lepTrack*sf_ewkV*sf_qcdV*sf_metTrig"
-                
+            common_weight = "*sf_pu*sf_tt*normalizedWeight*sf_lepID*sf_lepIso*sf_lepTrack*sf_ewkV*sf_qcdV*sf_metTrig"
+            
     elif channel is 'Zmm':
         if Type is 'data':
             common_weight = "*(1.0)"
@@ -57,9 +55,9 @@ def build_selection(selection):
         'signal'             : ['pfmet>250   && dphipfmet>0.5 && nLooseLep==0    && nLoosePhoton==0 && fabs(calomet-pfmet)/pfmet<0.5','signal'], 
         'singlemuon'         : ['pfUWmag>250 && dphipfUW>0.5  && nLoosePhoton==0 && nLooseLep==1    && looseLep1IsTight==1 && abs(looseLep1PdgId)==13 && fabs(calomet-pfmet)/pfUWmag<0.5 && mT<160','Wmn'],
         'singleelectron'     : ['pfUWmag>250 && dphipfUW>0.5  && nLoosePhoton==0 && nLooseLep==1    && looseLep1IsTight==1 && abs(looseLep1PdgId)==11 && fabs(calomet-pfmet)/pfUWmag<0.5 && mT<160 && pfmet>50','Wen'],
-        'dimuon'             : ['pfUZmag>200 && dphipfUZ>0.5  && nLooseElectron==0 && nLoosePhoton==0 && nLooseMuon==2 && nTightLep>0 && 60<diLepMass && diLepMass<120 && fabs(calomet-pfmet)/pfUZmag<0.5','Zmm'],
-        'dielectron'         : ['pfUZmag>200 && dphipfUZ>0.5  && nLooseMuon==0 && nLoosePhoton==0 && nLooseElectron==2 && nTightLep>0 && 60<diLepMass && diLepMass<120 && fabs(calomet-pfmet)/pfUZmag<0.5','Zee'],
-        'photon'             : ['pfUAmag>250 && dphipfUA>0.5 && nLooseLep==0 && nTau==0 && nLoosePhoton==1 && loosePho1IsTight==1 && fabs(loosePho1Eta)<1.4442 && fabs(calomet-pfmet)/pfUAmag<0.5 && loosePho1Pt>175.','GJets']
+        'dimuon'             : ['pfUZmag>250 && dphipfUZ>0.5  && nLooseElectron==0 && nLoosePhoton==0 && nLooseMuon==2 && nTightLep>0 && 60<diLepMass && diLepMass<120 && fabs(calomet-pfmet)/pfUZmag<0.5','Zmm'],
+        'dielectron'         : ['pfUZmag>250 && dphipfUZ>0.5  && nLooseMuon==0 && nLoosePhoton==0 && nLooseElectron==2 && nTightLep>0 && 60<diLepMass && diLepMass<120 && fabs(calomet-pfmet)/pfUZmag<0.5','Zee'],
+        'photon'             : ['pfUAmag>250 && dphipfUA>0.5  && nLooseLep==0 && nTau==0 && nLoosePhoton==1 && loosePho1IsTight==1 && fabs(loosePho1Eta)<1.4442 && fabs(calomet-pfmet)/pfUAmag<0.5 && loosePho1Pt>175.','GJets']
 
         }
     

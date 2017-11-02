@@ -83,7 +83,6 @@ class Bin:
         print "Trying to continue", self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).GetName()
         print "Does it have an attribute:", self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).getAttribute("temp")
         if (self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).getAttribute("temp")):
-          print "Hi Nick continue.. ", self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).GetName()
           continue
 	form_args = r.RooArgList(self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)))
      	delta_nuis = r.RooFormulaVar("delta_bkg_%s_%s"%(self.binid,nuis),"Delta Change from %s"%nuis,"1+@0",form_args)
@@ -148,7 +147,7 @@ class Bin:
      self.model_mu.removeMax()
     else: self.model_mu = self.wspace_out.var("model_mu_cat_%s_bin_%d"%(self.catid,self.id))
    else: 
-    print "OOOH NICE!!!!!!" 
+    print "Setting up dependence!!" 
     DEPENDANT = "%s_bin_%d"%(functionalForm,self.id)
     self.model_mu = self.wspace_out.function("pmu_%s"%(DEPENDANT))
 
@@ -163,7 +162,6 @@ class Bin:
        for nuis in nuisances: 
 
         if (self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).getAttribute("temp")):
-         print "Hi Nick continue.. ", self.wspace_out.function("sys_function_%s_%s"%(nuis,self.binid)).GetName()
          continue
 
 
@@ -305,7 +303,6 @@ class Channel:
 	,"Systematic Varation"\
       	#,"@0*%f"%size,r.RooArgList(self.wspace_out.var("nuis_%s"%name)))
       	,"@0*%f"%size,r.RooArgList(self.wspace_out.var("%s"%name)))
-      print "Hi Z:", "sys_function_%s_cat_%s_ch_%s_bin_%d"%(name,self.catid,self.chid,b),"Systematic Varation","@0*%f"%size
       if not self.wspace_out.function(func.GetName()) :self.wspace_out._import(func)
     # else 
     #  nuis = self.wspace_out.var("nuis_%s"%name)
@@ -361,7 +358,6 @@ class Channel:
 		,r.RooArgList(self.wspace_out.var("%s"%name))) # this is now relative deviation, SF-SF_0 = func => SF = SF_0*(1+func/SF_0)
 
         if (coeff_a == 0): 
-          print "Hi Nick adding attribute temp", func.GetName()          
           func.setAttribute("temp",True)
 
 	self.wspace_out.var("%s"%name).setVal(0)

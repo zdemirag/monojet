@@ -2,10 +2,8 @@
 # Setup the basics ----> USER DEFINED SECTION HERE ------------------------------------//
 fOutName = "combined_model.root"  # --> Output file
 fName    = "mono-x.root"  # --> input file (i.e output from previous)
-#categories=["monojet"]
-categories = ["monojet","monov"] # --> Should be labeled as in original config 
-#categories = ["monov"] # --> Should be labeled as in original config 
-#categories = ["monojet"] # --> Should be labeled as in original config 
+categories=["monojet"]
+#categories = ["monojet","monov"] # --> Should be labeled as in original config 
 controlregions_def = ["Z_constraints","W_constraints"] # --> configuration configs for control region fits. 
 # Note if one conrol region def depends on another (i,e if setDependant() is called) it must come AFTER its 
 # the one it depends on in this list!
@@ -29,9 +27,6 @@ ROOT.gSystem.AddIncludePath("-I$ROOFITSYS/include");
 
 ROOT.gSystem.Load("libRooFit.so")
 ROOT.gSystem.Load("libRooFitCore.so")
-
-#ROOT.gSystem.AddIncludePath("-I$ROOTSYS/include -I$ROOFITSYS/include");
-#ROOT.gSystem.Load("libRooFit");
 
 r.gROOT.SetBatch(1)
 r.gROOT.ProcessLine(".L diagonalizer.cc+")

@@ -9,21 +9,22 @@ from selection import build_selection, build_weights
 from datacard import dump_datacard
 from pretty import plot_ratio, plot_cms
 import numpy as n
+
 from LoadData import *
 #from LoadElectron import *
 #from LoadPhoton import *
 
 #channel_list = ['signal']
 channel_list  = ['Wmn']
-#channel_list = ['Wen']
 #channel_list = ['Zmm']
+#channel_list = ['Wen']
 #channel_list = ['Zee']
 #channel_list = ['GJets']
 
 category = 'monojet'
 
 lumi=35900. 
-lumi_str = 35.9
+lumi_str = '35.9'
 
 blind = False
 
@@ -96,7 +97,8 @@ def plot_stack(channel, name,var, bin, low, high, ylabel, xlabel, setLog = False
 
         print Type, common_weight, scale
 
-        if Type is not 'data' and Type is not 'signal_ggf' and Type is not 'signal_vbf':            
+        #if Type is not 'data' and Type is not 'signal_ggf' and Type is not 'signal_vbf':            
+        if Type is not 'data' and Type is not 'signal_ggf':            
 
             Variables[Type].SetFillColor(TColor.GetColor(physics_processes[Type]['color']))
             Variables[Type].SetLineColor(1)        
@@ -122,7 +124,8 @@ def plot_stack(channel, name,var, bin, low, high, ylabel, xlabel, setLog = False
             Variables[Type].SetMarkerStyle(20)
             if channel in 'signal' or channel in 'Zmm' or channel in 'Wmn':
                 #met trigger
-                makeTrees(Type,"events",channel).Draw(var + " >> " + histName, "(" + cut_standard + "&& (trigger&1)!=0)", "goff")  
+                #makeTrees(Type,"events",channel).Draw(var + " >> " + histName, "(" + cut_standard + "&& (trigger&1)!=0)", "goff")  
+                makeTrees(Type,"events",channel).Draw(var + " >> " + histName, cut_standard , "goff")  
             elif channel in 'GJets':
                 #photon trigger - no need, the flag is not working properly
                 makeTrees(Type,"events",channel).Draw(var + " >> " + histName, cut_standard , "goff")  
@@ -152,7 +155,8 @@ def plot_stack(channel, name,var, bin, low, high, ylabel, xlabel, setLog = False
         Variables[process].SetTitle(process)
         if physics_processes[process]['label'] != lastAdded:
             lastAdded = physics_processes[process]['label']
-            if process is not 'data' and process is not 'signal_vbf' and process is not 'signal_ggf':
+            #if process is not 'data' and process is not 'signal_vbf' and process is not 'signal_ggf':
+            if process is not 'data' and process is not 'signal_ggf':
                 legend . AddEntry(Variables[process],physics_processes[process]['label'] , "f")
             if process is 'data':
                 legend . AddEntry(Variables[process],physics_processes[process]['label'] , "p")
@@ -186,9 +190,9 @@ def plot_stack(channel, name,var, bin, low, high, ylabel, xlabel, setLog = False
              Variables['data'].SetBinContent(b+1,0.0)
 
     Variables['data'].Draw("Esame")  
-    Variables['signal_vbf'].SetLineWidth(2)
+    #Variables['signal_vbf'].SetLineWidth(2)
     Variables['signal_ggf'].SetLineWidth(2)
-    Variables['signal_vbf'].SetLineColor(1)
+    #Variables['signal_vbf'].SetLineColor(1)
     Variables['signal_ggf'].SetLineColor(4)
     #Variables['signal_vbf'].Draw("samehist")
     #Variables['signal_ggf'].Draw("samehist")
