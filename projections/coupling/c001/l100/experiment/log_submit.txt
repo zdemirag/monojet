@@ -1,0 +1,18 @@
+Job <155528522> is submitted to queue <1nh>.
+Job <155528523> is submitted to queue <1nh>.
+Job <155528524> is submitted to queue <1nh>.
+Job <155528525> is submitted to queue <1nh>.
+Job <155528526> is submitted to queue <1nh>.
+Job <155528528> is submitted to queue <1nh>.
+Created job script: job_Moriond_0.sh
+Created job script: job_Moriond_1.sh
+Created job script: job_Moriond_2.sh
+Created job script: job_Moriond_3.sh
+Created job script: job_Moriond_4.sh
+Created job script: job_Moriond_5.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_0_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_0.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_1_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_1.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_2_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_2.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_3_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_3.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_4_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_4.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_5_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c001/l100/experiment/job_Moriond_5.sh

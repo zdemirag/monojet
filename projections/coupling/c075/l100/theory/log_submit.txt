@@ -1,0 +1,18 @@
+Job <155528999> is submitted to queue <1nh>.
+Job <155529000> is submitted to queue <1nh>.
+Job <155529001> is submitted to queue <1nh>.
+Job <155529002> is submitted to queue <1nh>.
+Job <155529003> is submitted to queue <1nh>.
+Job <155529004> is submitted to queue <1nh>.
+Created job script: job_Moriond_0.sh
+Created job script: job_Moriond_1.sh
+Created job script: job_Moriond_2.sh
+Created job script: job_Moriond_3.sh
+Created job script: job_Moriond_4.sh
+Created job script: job_Moriond_5.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_0_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_0.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_1_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_1.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_2_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_2.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_3_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_3.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_4_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_4.sh
+>> bsub -o /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_5_%J.log -q 1nh  /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/projections/coupling/c075/l100/theory/job_Moriond_5.sh
