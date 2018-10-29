@@ -15,7 +15,7 @@ stri = ",".join(exp)
 
 dry = "--dry-run"
 
-cmd = 'combineTool.py -M Asymptotic monojet_scalar.txt -t -1 --freezeNuisanceGroups theory --setParameters lumiScale=10 --freezeParameters lumiScale --cl=0.95 --rMin=-5 --rMax=5 -m %s --job-mode lxbatch --task-name "Moriond" -n CENTRAL --sub-opts "-q 1nh " --merge 2 '%(stri)
+cmd = 'combineTool.py -M Asymptotic monojet_scalar.txt -t -1 --setParameters lumiScale=4 --freezeParameters lumiScale --cl=0.95 --rMin=-5 --rMax=5 -m %s --job-mode lxbatch --task-name "Moriond" -n CENTRAL --sub-opts "-q 1nh " --merge 2 '%(stri)
 
 #print cmd 
 os.system(cmd)

@@ -14,7 +14,7 @@ shapes gjets                    monojet_photon    /afs/cern.ch/work/z/zdemirag/w
 shapes qcd                      monojet_photon    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/monojet_purity.root monoxQCD:monojet_gjets_qcd
 shapes *                        monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/combined_model.root combinedws:monojet_signal_$PROCESS
 shapes data_obs                 monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/combined_model.root combinedws:monojet_signal_data
-shapes monojet                  monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/MonoJ_805_1.0_catmonojet_13TeV_v1.root combinedws:monojet_signal_signal_80501250001
+shapes monojet                  monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/MonoJ_805_1.0_catmonojet_13TeV_v1.root combinedws:monojet_signal_signal_$MASS
 shapes qcd                      monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/monojet_qcd.root monoxQCD:monojet_signal_qcd monoxQCD:monojet_signal_qcd_$SYSTEMATIC
 shapes wjets                    monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/combined_model.root combinedws:monojet_wjetssignal_zjets_model
 shapes zjets                    monojet_signal    /afs/cern.ch/work/z/zdemirag/work/zpt/CMSSW_8_1_0/src/monojet/inputs/combined_model.root combinedws:monojet_signal_zjets_model

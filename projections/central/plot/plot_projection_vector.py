@@ -5,22 +5,24 @@ setTDRStyle()
 
 import math
 
+lumiScale = "4"
+
 def make_tgraph(opt):
     
     curve = []
     mass  = []
 
     if opt is 'l1':
-        filename = '../vector/ls1/l1_vector.root'
+        filename = '../vector/ls1/ls1_vector.root'
 
     elif opt is 'l100':
-        filename = '../vector/ls100/all/l100_vector.root'
+        filename = '../vector/ls'+lumiScale+'/all/ls'+lumiScale+'_all_vector.root'
 
     elif opt is 'l100_exp':
-        filename = '../vector/ls100/experiment/l100_vector_experiment.root'
+        filename = '../vector/ls'+lumiScale+'/experiment/ls'+lumiScale+'_exp_vector.root'
 
     elif opt is 'l100_the':
-        filename = '../vector/ls100/theory/l100_vector_theory.root'
+        filename = '../vector/ls'+lumiScale+'/theory/ls'+lumiScale+'_the_vector.root'
 
     else:
         print "No option specified"
@@ -64,7 +66,7 @@ def plot_projection():
     dummy.SetLineColor(0)
     dummy.SetLineWidth(0)
     dummy.SetFillColor(0)
-    dummy.SetMinimum(0.01)
+    dummy.SetMinimum(0.05)
     dummy.SetMaximum(1000)
     dummy.Draw()    
 
@@ -86,42 +88,52 @@ def plot_projection():
     vec_l100_the = ROOT.TVectorD(len(ary_l100_the),ary_l100_the)  
     gr_l100_the  = ROOT.TGraph(vec_massl100_the,vec_l100_the)        
 
-    gr_l1.SetLineColor(4)
+    #color1 = TColor.GetColor("#0868ac")
+    #color2 = TColor.GetColor("#43a2ca")
+    #color3 = TColor.GetColor("#7bccc4")
+    #color4 = TColor.GetColor("#bae4bc")
+
+    color1 = 2
+    color2 = 4
+    color3 = 8
+    color4 = 1
+
+    gr_l1.SetLineColor(color1)
     gr_l1.SetLineWidth(2)
     gr_l1.SetLineStyle(1)
     gr_l1.SetMarkerStyle(20)
-    gr_l1.SetMarkerColor(4)
+    gr_l1.SetMarkerColor(color1)
     gr_l1.Draw("lpsame")
 
-    gr_l100.SetLineColor(2)
+    gr_l100.SetLineColor(color2)
     gr_l100.SetLineWidth(2)
     gr_l100.SetLineStyle(1)
-    gr_l100.SetMarkerStyle(20)
-    gr_l100.SetMarkerColor(2)
+    gr_l100.SetMarkerStyle(22)
+    gr_l100.SetMarkerColor(color2)
     gr_l100.Draw("lpsame")
 
-    gr_l100_exp.SetLineColor(8)
+    gr_l100_exp.SetLineColor(color3)
     gr_l100_exp.SetLineWidth(2)
     gr_l100_exp.SetLineStyle(1)
-    gr_l100_exp.SetMarkerStyle(20)
-    gr_l100_exp.SetMarkerColor(8)
+    gr_l100_exp.SetMarkerStyle(23)
+    gr_l100_exp.SetMarkerColor(color3)
     gr_l100_exp.Draw("lpsame")
 
-    gr_l100_the.SetLineColor(2)
+    gr_l100_the.SetLineColor(color4)
     gr_l100_the.SetLineWidth(2)
-    gr_l100_the.SetLineStyle(2)
+    gr_l100_the.SetLineStyle(1)
     gr_l100_the.SetMarkerStyle(4)
-    gr_l100_the.SetMarkerColor(2)
-    #gr_l100_the.Draw("lpsame")
+    gr_l100_the.SetMarkerColor(color4)
+    gr_l100_the.Draw("lpsame")
 
     gStyle.SetOptStat(0)
 
     legend = TLegend(0.50,.70,.92,.90)
-    legend.AddEntry(gr_l1,"35.9 fb^{-1}, all unc.","l")
-    legend.AddEntry(gr_l100,"3500 fb^{-1}, all unc.","l")
-    legend.AddEntry(gr_l100_exp,"3500 fb^{-1}, no experimental unc.","l")
-    #legend.AddEntry(gr_l100_the,"3600 fb^{-1}, no theoretical unc.","l")
-    
+    legend.AddEntry(gr_l1,"35.9 fb^{-1}, all unc.","lp")
+    legend.AddEntry(gr_l100,"143.6 fb^{-1}, all unc.","lp")
+    legend.AddEntry(gr_l100_exp,"143.6 fb^{-1}, no experimental unc.","lp")
+    legend.AddEntry(gr_l100_the,"143.6 fb^{-1}, no theoretical unc.","lp")
+
     legend.SetShadowColor(0);
     legend.SetFillColor(0);
     legend.SetLineColor(0);
@@ -161,10 +173,10 @@ def plot_projection():
     gPad.RedrawAxis()
     
     topfolder = "/afs/cern.ch/user/z/zdemirag/www/monojet_projections/"
-    c.SaveAs(topfolder+"/projection_vector_1D.pdf")
-    c.SaveAs(topfolder+"/projection_vector_1D.png")
-    c.SaveAs(topfolder+"/projection_vector_1D.C")
-    c.SaveAs(topfolder+"/projection_vector_1D.root")
+    c.SaveAs(topfolder+"/projection_vector_1D_ls"+lumiScale+".pdf")
+    c.SaveAs(topfolder+"/projection_vector_1D_ls"+lumiScale+".png")
+    c.SaveAs(topfolder+"/projection_vector_1D_ls"+lumiScale+".C")
+    c.SaveAs(topfolder+"/projection_vector_1D_ls"+lumiScale+".root")
 
     del c
  
